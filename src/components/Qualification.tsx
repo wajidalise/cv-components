@@ -1,5 +1,6 @@
-import { Award } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "../lib/utils";
+
+ 
 
 export interface QualificationData {
   title: string;
@@ -7,27 +8,28 @@ export interface QualificationData {
 }
 
 interface QualificationCardProps {
-  data: QualificationData;
+  data: QualificationData[];
+  title?: string;
   className?: string;
   style?: React.CSSProperties;
 }
 
-export const Qualification = ({ data, className = "", style }: QualificationCardProps) => {
+export const Qualification = ({ data, title, className = "" }: QualificationCardProps) => {
   return (
-    <Card className={`border-border hover:shadow-lg transition-all duration-300 ${className}`} style={style}>
-      <CardContent className="pt-6">
-        <div className="flex items-start gap-4">
-          <div className="p-2 rounded-lg bg-secondary/10 flex-shrink-0">
-            <Award className="h-5 w-5 text-secondary" />
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold text-foreground mb-1">{data.title}</h4>
-            {data.description && (
-              <p className="text-sm text-muted-foreground">{data.description}</p>
-            )}
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+   <section className={cn("", className)}>
+       <h1 className='uppercase text-sm font-medium border-b border-gray-300 pb-1'>
+        {title}
+      </h1> 
+         <div className="space-y-1">
+           {data?.map((item, i) =>  {
+            return (
+              <div key={i} className='space-y-1'>
+                <h3 className="text-xs font-semibold text-primary mb-[1px]">{item.title}</h3>
+                <p className="text-xs">{item.description}</p>
+              </div>
+            )
+          })}
+          </div>  
+      </section>
   );
 };
