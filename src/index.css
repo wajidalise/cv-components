@@ -1,7 +1,13 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; 
-} */
+@theme {
+  --font-rubik: 'Rubik', sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-inter);
+}
 
 

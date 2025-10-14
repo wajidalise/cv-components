@@ -1,6 +1,4 @@
-import { cn } from "../lib/utils";
-
- 
+import { cn } from '../lib/utils';
 
 export interface QualificationData {
   title: string;
@@ -12,24 +10,41 @@ interface QualificationCardProps {
   title?: string;
   className?: string;
   style?: React.CSSProperties;
+   titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
 }
 
-export const Qualification = ({ data, title, className = "" }: QualificationCardProps) => {
+export const Qualification = ({
+  data,
+  title,
+  className = '',
+  titleClassName,
+  subtitleClassName,
+  paragraphClassName
+}: QualificationCardProps) => {
   return (
-   <section className={cn("", className)}>
-       <h1 className='uppercase text-sm font-medium border-b border-gray-300 pb-1'>
+    <section className={cn('mt-3', className)}>
+      <h1 className={cn(' uppercase border-b border-gray-300 pb-1', titleClassName)}>
         {title}
-      </h1> 
-         <div className="space-y-1">
-           {data?.map((item, i) =>  {
-            return (
-              <div key={i} className='space-y-1'>
-                <h3 className="text-xs font-semibold text-primary mb-[1px]">{item.title}</h3>
-                <p className="text-xs">{item.description}</p>
-              </div>
-            )
-          })}
-          </div>  
-      </section>
+      </h1>
+      <div className='space-y-2 mt-1'>
+        {data?.map((item, i) => {
+          return (
+            <div
+              key={i}
+              className=''
+            >
+              <h3 className={cn('mb-[1px] ', subtitleClassName)}>
+                {item.title}
+              </h3>
+              <p className={cn('', paragraphClassName)}>
+                {item.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };

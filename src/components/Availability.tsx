@@ -6,14 +6,19 @@ interface Props {
   };
   title: string;
   className?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
 }
-export const Availability = ({ data, title, className }: Props) => {
+export const Availability = ({ data, title, className, titleClassName, paragraphClassName }: Props) => {
   return (
-    <section className={cn(className)}>
-      <h2 className='uppercase text-sm font-medium border-b border-gray-300 pb-1'>
+    <section className={cn('mt-3', className)}>
+      <h2 className={cn(' uppercase border-b border-gray-300 pb-1', titleClassName)}>
         {title}
       </h2>
-      <p className='text-sm'>{data?.description}</p>
+      <p className={cn('mt-1', paragraphClassName)}>
+        {data?.description}
+      </p>
     </section>
   );
 };

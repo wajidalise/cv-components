@@ -1,16 +1,27 @@
-import { cn } from "../lib/utils";
+import { cn } from '../lib/utils';
 
-
-export const AboutUs = ({ data, title, className }: { data: { description: string}; title: string; className?: string }) => {
+export const AboutUs = ({
+  data,
+  title,
+  className,
+  titleClassName, 
+  paragraphClassName
+}: {
+  data: { description: string };
+  title: string;
+  className?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
+}) => {
   return (
-    <section className={cn('', className)}>
-      <h2 className='text-[18px] font-bold text-start mb-4  border-b border-white/30 pb-2 uppercase'>
+    <section className={cn('mt-3', className)}>
+      <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
-      <p className='text-[13px] text-justify'>
+      <p className={cn('text-justify mt-1 ', paragraphClassName)}>
         {data?.description}
       </p>
     </section>
   );
 };
- 

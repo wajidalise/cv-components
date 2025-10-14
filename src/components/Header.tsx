@@ -16,17 +16,20 @@ interface Props {
   title?: string;
   className?: string;
   style?: React.CSSProperties;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
 }
 
-export const Header = ({ data, className = '' }: Props) => {
+export const Header = ({ data, className = '', titleClassName, subtitleClassName, paragraphClassName  }: Props) => {
   return (
     <header className={cn('', className)}>
-      <h1 className='text-[23px]  font-bold '>
+      <h1 className={(cn("", titleClassName))}>
         {data?.name}
       </h1>
-      <p className='text-[13px] mb-4 text-blue-500'>{data?.title}</p>
-      <div className='flex flex-col gap-2 text-[11px]'>
-        <div className='flex gap-2'>
+      <h2 className={(cn("mb-4", subtitleClassName))}>{data?.title}</h2>
+      <div  className={(cn("flex flex-col gap-2", paragraphClassName))}>
+        <div className='flex gap-2 '>
             <a
           href='tel:+4915754291140'
           className='flex items-center gap-2  transition-colors'

@@ -1,29 +1,35 @@
 import { cn } from '../lib/utils';
- 
 
 export const Language = ({
   data,
   title,
   className,
+  titleClassName,
+  paragraphClassName,
 }: {
   data: { language: string; level: string }[];
   title: string;
   className?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
 }) => {
   return (
-    <section className={cn('mb-8', className)}>
-      <h2 className='text-lg font-bold mb-4 tracking-wide border-b border-white/30 pb-2'>
+    <section className={cn('mt-3', className)}>
+      <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
-      <div className='space-y-2 text-[13px]'>
+      <div className='space-y-2 mt-1'>
         {data?.map((item, i) => {
           return (
             <div
               key={i}
-              className='flex justify-between'
+              className='flex justify-between '
             >
-              <span>{item.language}</span>
-              <span className=''>{item.level}</span>
+              <span className='text-[11.9px] font-rubik font-normal'>
+                {item.language}
+              </span>
+              <span className={cn('', paragraphClassName)}>{item.level}</span>
             </div>
           );
         })}

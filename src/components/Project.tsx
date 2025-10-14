@@ -15,12 +15,27 @@ interface Props {
   title?: string;
   className?: string;
   style?: React.CSSProperties;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  paragraphClassName?: string;
 }
 
-export const Project = ({ data, title, className = '' }: Props) => {
+export const Project = ({
+  data,
+  title,
+  className = '',
+  titleClassName,
+  subtitleClassName,
+  paragraphClassName,
+}: Props) => {
   return (
-    <div className={cn('', className)}>
-      <h1 className='uppercase text-sm font-medium border-b border-gray-300 pb-1'>
+    <div className={cn('mt-3', className)}>
+      <h1
+        className={cn(
+          ' uppercase border-b border-gray-300 pb-1',
+          titleClassName,
+        )}
+      >
         {title}
       </h1>
       {data.map((item, index) => {
@@ -32,29 +47,29 @@ export const Project = ({ data, title, className = '' }: Props) => {
             {/* Header */}
             <div className='flex justify-between gap-4 mt-1'>
               <div className='flex-1'>
-                <h3 className='text-xs font-semibold text-primary mb-[1px] '>
+                <h3 className={cn('mb-[1px] ', subtitleClassName)}>
                   {item.title}
                 </h3>
-                <p className='text-xs'>{item.location}</p>
+                <p className={cn('', paragraphClassName)}>{item.location}</p>
               </div>
-              <div className='flex flex-col text-xs text-primary'>
+              <div className={cn('flex flex-col ', paragraphClassName)}>
                 <div className='flex items-center gap-2'>
                   <Calendar className='size-3' />
                   <span>{item.period}</span>
                 </div>
               </div>
             </div>
-            <em className='text-xs '>{item.description}</em>
+            <em className={cn('', paragraphClassName)}>{item.description}</em>
 
             {/* Responsibilities */}
-            <ul className=''>
+            <ul className={cn('', paragraphClassName)}>
               {item.descriptions?.map((items, i) => (
                 <li
                   key={i}
                   className='flex items-center  gap-3'
                 >
-                  <span className='text-primary '>•</span>
-                  <span className='text-xs text-primary flex-1'>{items}</span>
+                  <span className=''>•</span>
+                  <span className={cn('flex-1 ')}>{items}</span>
                 </li>
               ))}
             </ul>
