@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@html2canvas/html2canvas": "^1.6.3",
     "@tailwindcss/postcss": "^4.1.14",
     "@tailwindcss/vite": "^4.1.14",
     "clsx": "^2.1.1",
+    "jspdf": "^3.0.3",
     "lucide-react": "^0.545.0",
     "postcss": "^8.5.6",
     "react": "^19.1.1",

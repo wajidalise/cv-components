@@ -1,4 +1,5 @@
-@import "tailwindcss";
+/* index.css */
+@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @theme {
@@ -10,4 +11,52 @@
   font-family: var(--font-inter);
 }
 
+/* === Print layout setup === */
+@media print {
+  @page {
+    size: A4;
+    margin: 0; 
+  }
 
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page {
+    width: 210mm !important;
+    min-height: 297mm !important; 
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    page-break-after: always;  
+  }
+
+ 
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  * {
+    box-sizing: border-box;
+    break-inside: avoid;
+  }
+}
+
+/* Optional: screen preview layout */
+@media screen {
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+  }
+}

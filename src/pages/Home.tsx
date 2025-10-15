@@ -1,5 +1,7 @@
-// import MaxWidth from '../components/MaxWidth';
+// pages/Home.tsx
+
 import { Experience } from '../components/Experience';
+// import MaxWidth from '../components/MaxWidth';
 import {
   aboutusData,
   achievementsData,
@@ -26,8 +28,8 @@ import { Availability } from '../components/Availability';
 
 const Home = () => {
   return (
-    <div className='min-h-screen flex '>
-      <div className='w-full lg:w-[70%] px-6 '>
+    <div className='min-h-screen flex page bg-white shadow-lg '>
+      <div className='w-[70%] p-6 '>
         <Header
           data={headerData}
           className=''
@@ -75,7 +77,7 @@ const Home = () => {
           paragraphClassName='text-[10.2px] font-inter text-primary'
         />
       </div>
-      <div className='w-full lg:w-[30%] bg-blue-500 text-white px-6  '>
+      <div className='w-[30%] bg-blue-500 text-white p-6  '>
         <ProfilePhoto
           data={imageData}
           className=''
@@ -106,7 +108,7 @@ const Home = () => {
           subtitleClassName='text-[12.7px] font-rubik text-primary'
           paragraphClassName='text-[10.2px] font-inter text-primary'
         />
-      </div>
+      </div> 
     </div>
   );
 };
