@@ -1,5 +1,5 @@
 // Experience.tsx
-import { Calendar, MapPin } from 'lucide-react';
+// import { Calendar, MapPin } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export interface Data {
@@ -18,15 +18,17 @@ interface Props {
   titleClassName?: string;
   subtitleClassName?: string;
   paragraphClassName?: string;
+  companyClassName?: string
 }
 
-export const Experience = ({ data, title, className = '', titleClassName, subtitleClassName, paragraphClassName }: Props) => {
+export const Experience = ({ data, title, className = '', titleClassName, subtitleClassName, paragraphClassName, companyClassName }: Props) => {
   return (
-    <div className={cn('mt-3', className)}>
+    <div className={cn('', className)}>
       <h1 className={cn(' uppercase border-b border-gray-300 pb-1', titleClassName)}>
         {title}
       </h1>
-      {data.map((item, index) => {
+   <div className='space-y-4 '>
+       {data.map((item, index) => {
         return (
           <div
             key={index}
@@ -38,31 +40,31 @@ export const Experience = ({ data, title, className = '', titleClassName, subtit
                 <h3 className={cn('mb-[1px] ', subtitleClassName)}>
                   {item.title}
                 </h3>
-                <p className='text-[11.9px] font-rubik text-blue-500'>
+                <p className={cn('', companyClassName)}>
                   {item.company}
                 </p>
               </div>
-              <div className={cn('flex flex-col ', paragraphClassName)} >
+              <div className={cn('flex flex-col space-y-1 items-end max-w-[170px] ', paragraphClassName)} >
                 <div className='flex items-center gap-2'>
-                  <Calendar className='size-3' />
+                  {/* <Calendar className='size-3' /> */}
                   <span>{item.period}</span>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <MapPin className='size-3' />
+                <div className='flex items-center gap-2 text-end'>
+                  {/* <MapPin className='size-3' /> */}
                   <span>{item.location}</span>
                 </div>
               </div>
             </div>
 
             {/* Responsibilities */}
-            <ul className=''>
+            <ul className={cn(' text-justify', paragraphClassName)}>
               {item.descriptions?.map((items, i) => (
                 <li
                   key={i}
-                  className='flex items-center  gap-3'
+                  className='flex items-center  gap-3 '
                 >
-                  <span className='text-primary '>•</span>
-                  <span className='text-[10.2px] font-inter font-normal text-primary flex-1'>
+                  <span className=''>•</span>
+                  <span className='flex-1'>
                     {items}
                   </span>
                 </li>
@@ -71,6 +73,7 @@ export const Experience = ({ data, title, className = '', titleClassName, subtit
           </div>
         );
       })}
+   </div>
     </div>
   );
 };

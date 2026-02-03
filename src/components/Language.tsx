@@ -16,11 +16,11 @@ export const Language = ({
   paragraphClassName?: string;
 }) => {
   return (
-    <section className={cn('mt-3', className)}>
+    <section className={cn('', className)}>
       <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
-      <div className='space-y-2 mt-1'>
+      <div className='space-y-3 mt-1'>
         {data?.map((item, i) => {
           return (
             <div

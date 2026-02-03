@@ -13,11 +13,11 @@ interface Props {
 }
 export const Availability = ({ data, title, className, titleClassName, paragraphClassName }: Props) => {
   return (
-    <section className={cn('mt-3', className)}>
+    <section className={cn('', className)}>
       <h2 className={cn(' uppercase border-b border-gray-300 pb-1', titleClassName)}>
         {title}
       </h2>
-      <p className={cn('mt-1', paragraphClassName)}>
+      <p className={cn('mt-1 text-justify', paragraphClassName)}>
         {data?.description}
       </p>
     </section>

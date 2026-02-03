@@ -28,75 +28,80 @@ import { Availability } from '../components/Availability';
 
 const Home = () => {
   return (
-    <div className='min-h-screen flex page bg-white shadow-lg '>
-      <div className='w-[70%] p-6 '>
+    <div className='min-h-screen flex page '>
+      <div className='w-[65.4%] py-9 pl-11 pr-8 '>
         <Header
           data={headerData}
           className=''
-          titleClassName='text-[24px] font-rubik text-primary'
-          subtitleClassName='text-[14px] font-inter text-blue-600'
+          titleClassName='text-[24px] font-rubik text-[#3e3e3e] font-medium'
+          subtitleClassName='text-[14px] font-inter text-[#078fff]'
           paragraphClassName='text-[11px] font-inter text-gray-700'
         />
         <Experience
           data={experienceData}
           title='Experience'
-          className=''
-          titleClassName='text-[13.6px] font-rubik'
-          subtitleClassName='text-[12.7px] font-rubik text-primary'
-          paragraphClassName='text-[10.2px] font-inter text-primary'
+          className='mt-5'
+          titleClassName='text-[13.6px] font-rubik text-black/80'
+          subtitleClassName='text-[12.7px] font-rubik text-black/80'
+          companyClassName='text-[11.9px] font-rubik text-[#078fff]'
+          paragraphClassName='text-[10.2px] font-inter text-black/80'
         />
         <Project
           data={projectData}
-          title='Projects'
-          className=''
-          titleClassName='text-[13.6px] font-rubik'
-          subtitleClassName='text-[12.7px] font-rubik text-primary'
-          paragraphClassName='text-[10.2px] font-inter text-primary'
+          title='Research and consulting projects'
+          className='mt-5'
+          titleClassName='text-[13.6px] font-rubik text-black/80'
+          subtitleClassName='text-[12.7px] font-rubik text-black/80'
+          paragraphClassName='text-[10.2px] font-inter text-black/80'
         />
         <Education
           data={educationData}
           title='Education'
-          className=''
-          titleClassName='text-[13.6px] font-rubik'
-          subtitleClassName='text-[12.7px] font-rubik text-primary'
-          paragraphClassName='text-[10.2px] font-inter text-primary'
+          className='mt-5'
+          titleClassName='text-[13.6px] font-rubik text-black/80'
+          subtitleClassName='text-[12.7px] font-rubik text-black/80'
+          institutionClassName='text-[11.9px] font-rubik text-[#078fff]'
+          paragraphClassName='text-[10.2px] font-inter text-black/80'
         />
         <Qualification
           data={qualificationData}
           title='PROFESSIONAL QUALIFICATIONS'
-          className=''
-          titleClassName='text-[13.6px] font-rubik'
-          subtitleClassName='text-[12.7px] font-rubik text-primary'
-          paragraphClassName='text-[10.2px] font-inter text-primary'
+          className='mt-5'
+          titleClassName='text-[13.6px] font-rubik text-black/80'
+          subtitleClassName='text-[12.7px] font-rubik text-black/80'
+          paragraphClassName='text-[10.2px] font-inter text-black/80'
         />
         <Availability
           data={availabilityData}
           title='Availability'
-          className=''
-          titleClassName='text-[13.6px] font-rubik'
-          paragraphClassName='text-[10.2px] font-inter text-primary'
+          className='mt-5'
+          titleClassName='text-[13.6px] font-rubik text-black/80'
+          paragraphClassName='text-[10.2px] font-inter text-black/80'
         />
       </div>
-      <div className='w-[30%] bg-blue-500 text-white p-6  '>
+      <div className='w-[34.6%] bg-[#22405c] text-white py-9 pr-10 pl-8 '>
         <ProfilePhoto
           data={imageData}
-          className=''
+          className='mt-5'
         />
         <AboutUs
           data={aboutusData}
           title='About Me'
+          className='mt-5'
           titleClassName='text-[13.6px] font-rubik'
           paragraphClassName='text-[10.2px] font-inter text-primary'
         />
         <Language
           data={languagesData}
           title='Languages'
+          className='mt-5'
           titleClassName='text-[13.6px] font-rubik'
           paragraphClassName='text-[10.2px] font-inter text-primary'
         />
         <ToolAndSkill
           data={skillCategoriesData}
           title='Tools and Skills'
+          className='mt-5'
           titleClassName='text-[13.6px] font-rubik'
           subtitleClassName='text-[12.7px] font-rubik text-primary'
           paragraphClassName='text-[10.2px] font-inter text-primary'
@@ -104,6 +109,7 @@ const Home = () => {
         <Achivements
           data={achievementsData}
           title='Key Achivements'
+          classNmae='mt-5'
           titleClassName='text-[13.6px] font-rubik'
           subtitleClassName='text-[12.7px] font-rubik text-primary'
           paragraphClassName='text-[10.2px] font-inter text-primary'

@@ -10,8 +10,8 @@ interface Props {
 
 export const ProfilePhoto = ({ data, className = '' }: Props) => {
   return (
-    <div className={cn("flex justify-center mt-2", className)}>
-      <div className='w-28 h-28 rounded-full overflow-hidden '>
+    <div className={cn("flex justify-center", className)}>
+      <div className='w-24 h-24 rounded-full overflow-hidden '>
         <img
           src={data?.image}
           alt='Chaudhary Shahnawaz Maqsood'

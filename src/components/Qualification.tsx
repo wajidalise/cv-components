@@ -25,11 +25,11 @@ export const Qualification = ({
   paragraphClassName
 }: QualificationCardProps) => {
   return (
-    <section className={cn('mt-3', className)}>
+    <section className={cn('', className)}>
       <h1 className={cn(' uppercase border-b border-gray-300 pb-1', titleClassName)}>
         {title}
       </h1>
-      <div className='space-y-2 mt-1'>
+      <div className='space-y-3 mt-1 text-justify'>
         {data?.map((item, i) => {
           return (
             <div

@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ag-media/react-pdf-table": "^2.0.3",
     "@html2canvas/html2canvas": "^1.6.3",
+    "@react-pdf/renderer": "^4.3.1",
     "@tailwindcss/postcss": "^4.1.14",
     "@tailwindcss/vite": "^4.1.14",
     "clsx": "^2.1.1",
@@ -19,6 +21,7 @@
     "postcss": "^8.5.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-pdf-tailwind": "^3.0.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.14"
   },

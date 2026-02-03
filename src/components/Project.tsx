@@ -1,6 +1,6 @@
 // Project.tsx
-import { Calendar } from 'lucide-react';
 import { cn } from '../lib/utils';
+// import { Calendar } from 'lucide-react';
 
 export interface Data {
   title: string;
@@ -30,7 +30,7 @@ export const Project = ({
   paragraphClassName,
 }: Props) => {
   return (
-    <div className={cn('mt-3', className)}>
+    <div className={cn('', className)}>
       <h1
         className={cn(
           ' uppercase border-b border-gray-300 pb-1',
@@ -39,7 +39,8 @@ export const Project = ({
       >
         {title}
       </h1>
-      {data.map((item, index) => {
+     <div className='space-y-3'>
+        {data.map((item, index) => {
         return (
           <div
             key={index}
@@ -55,15 +56,15 @@ export const Project = ({
               </div>
               <div className={cn('flex flex-col ', paragraphClassName)}>
                 <div className='flex items-center gap-2'>
-                  <Calendar className='size-3' />
+                  {/* <Calendar className='size-3' /> */}
                   <span>{item.period}</span>
                 </div>
               </div>
             </div>
-            <em className={cn('', paragraphClassName)}>{item.description}</em>
+            <em className={cn('text-justify', paragraphClassName)}>{item.description}</em>
 
             {/* Responsibilities */}
-            <ul className={cn('', paragraphClassName)}>
+            <ul className={cn('text-justify', paragraphClassName)}>
               {item.descriptions?.map((items, i) => (
                 <li
                   key={i}
@@ -77,6 +78,7 @@ export const Project = ({
           </div>
         );
       })}
+     </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 // Achivements.tsx
-import { BookOpenText, GraduationCap, University } from 'lucide-react';
+import { BookOpenText, GraduationCap, Star } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface Props {
@@ -16,14 +16,15 @@ interface Props {
 }
 
 const icons = [
-  <GraduationCap className='w-5 h-5' />,
-  <University className='w-5 h-5' />,
-  <BookOpenText className='w-5 h-5' />,
+  <GraduationCap className='h-7 w-7' />,
+  // <University className='h-6 w-6' />,
+  <Star className='h-7 w-7' />,
+  <BookOpenText className='h-7 w-7' />,
 ];
 
 export const Achivements = ({ data, title, classNmae, titleClassName, subtitleClassName, paragraphClassName }: Props) => {
   return (
-    <section className={cn('mt-3', classNmae)}>
+    <section className={cn('', classNmae)}>
       <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
@@ -37,7 +38,7 @@ export const Achivements = ({ data, title, classNmae, titleClassName, subtitleCl
             >
               {item.icon}
               <div>
-                <h3 className={cn('mb-[1px] ', subtitleClassName)}>
+                <h3 className={cn('mb-[2px] ', subtitleClassName)}>
                   {item.title}
                 </h3>
                 <p className={cn('', paragraphClassName)}>

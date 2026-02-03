@@ -1,6 +1,6 @@
 /* index.css */
-@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 @theme {
   --font-rubik: 'Rubik', sans-serif;
@@ -15,7 +15,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 0; 
+    margin: 0;
   }
 
   html,
@@ -29,16 +29,14 @@
 
   .page {
     width: 210mm !important;
-    min-height: 297mm !important; 
+    min-height: 297mm !important;
     box-shadow: none !important;
     border: none !important;
     background: white !important;
-    page-break-after: always;  
+    page-break-after: always;
   }
 
- 
-
-  .page:last-child {
+  .page:last-of-type {
     page-break-after: auto;
   }
 

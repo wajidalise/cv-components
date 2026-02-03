@@ -16,25 +16,25 @@ interface ToolAndSkillProps {
 
 export const ToolAndSkill = ({ data, title, className, titleClassName, subtitleClassName, paragraphClassName }: ToolAndSkillProps) => {
   return (
-    <section className={cn('mt-3', className)}>
+    <section className={cn('', className)}>
       <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
 
-     <div className='mt-1'>
+     <div className='space-y-3 mt-1'>
        {data?.map((item: { title: string; skills: string[] }, i: number) => {
         return (
           <div
             key={i}
-            className='mb-3 '
+            className=''
           >
             <h3 className={cn('mb-3 ', subtitleClassName)}>
               {item.title}
             </h3>
-            <div className={cn('flex flex-wrap gap-2', paragraphClassName)}>
+            <div className={cn('flex flex-wrap gap-1 ', paragraphClassName, 'text-[9.5px]')}>
               {item?.skills?.map((skill, idx) => (
-                <Fragment key={skill}>
-                  {idx > 0 && <span>•</span>}
+                <Fragment key={skill} >
+                  {idx > 0 && <span >•</span>}
                   <span className=''>{skill}</span>
                 </Fragment>
               ))}

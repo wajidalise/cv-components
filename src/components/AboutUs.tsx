@@ -16,7 +16,7 @@ export const AboutUs = ({
   paragraphClassName?: string;
 }) => {
   return (
-    <section className={cn('mt-3', className)}>
+    <section className={cn('', className)}>
       <h2 className={cn(' uppercase border-b pb-1', titleClassName)}>
         {title}
       </h2>
